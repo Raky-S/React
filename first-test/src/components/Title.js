@@ -1,24 +1,5 @@
 import React, { Component } from 'react';
 
-/*
-class App extends Component {
-  render() {
-    return (
-      <div prhase="App">
-        <h1>Hello World Konexio!</h1>
-        <h2> Name: {this.props.name}</h2>
-      </div>
-    );
-  }
-}
-
-export default App;*/
-
-
-
-
-
-
 
 class Title extends Component {
   render() {
