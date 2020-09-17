@@ -26,6 +26,7 @@ class Title extends Component {
       <div>
         <h2> Guess what am I. I have three horns! What's your answer? </h2>
         <h3> By the way , logo is going backwards and faster!</h3>
+        <p> {this.props.title}</p>
         </div>
     );
   }

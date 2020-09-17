@@ -8,8 +8,9 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
+          <Title title={ 'This is a rhinoceros not a logo'}></Title>
           <img src={logo} className="App-logo" alt="logo" />
-          <Title></Title>
+          
           <a
             className="App-link"
             href="https://reactjs.org"
