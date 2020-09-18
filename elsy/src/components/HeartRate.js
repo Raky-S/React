@@ -1,13 +1,11 @@
 import React, { Component } from "react";
-import Icon from './core/Icon';
-
-
+import Icon from "./core/Icon";
 
 class HeartRate extends Component {
   render() {
     return (
       <div class="box, col-md-2, col-6">
-        <span
+        {/* <span
           class="material-icons"
           style={{
             fontSize: 100,
@@ -15,9 +13,11 @@ class HeartRate extends Component {
           }}
         >
           favorite
-        </span>
-        {this.props.heart}
+        </span> */}
 
+        <Icon name= 'favorite' color= {'red'} ></Icon>
+
+<p>{this.props.heart}</p>
       </div>
     );
   }
