@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import Icon from './core/Icon';
 
 
-class Person extends Component {
+
+class HeartRate extends Component {
   render() {
     return (
       <div class="box, col-md-2, col-6">
@@ -10,13 +11,15 @@ class Person extends Component {
           class="material-icons"
           style={{
             fontSize: 100,
-            color: 'black',
+            color: "red",
           }}
         >
-          directions_walk
+          favorite
         </span>
+        {this.props.heart}
+
       </div>
     );
   }
 }
-export default Person;
+export default HeartRate;

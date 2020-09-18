@@ -1,6 +1,6 @@
 import React, { Component } from "react";
+import HeartRate from "./components/HeartRate";
 import Person from './components/Person';
-
 
 
 
@@ -15,7 +15,8 @@ class App extends Component {
   render() {
     return (
       <div> 
-        <Person/>
+        <Person></Person>
+        <HeartRate heart= {MIN_HEART}/>
 
       </div>
     );
