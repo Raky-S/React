@@ -5,7 +5,9 @@ class Person extends Component {
   render() {
     return (
       <div class="box, col-md-2, col-6">
-        <Icon name= 'directions_walk'  color= {'black'}></Icon>
+        <Icon name="directions_walk" color={"black"}>
+          
+        </Icon>
       </div>
     );
   }

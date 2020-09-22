@@ -15,9 +15,9 @@ class HeartRate extends Component {
           favorite
         </span> */}
 
-        <Icon name= 'favorite' color= {'red'} ></Icon>
+        <Icon name="favorite" color={"red"}>{this.state.heart}</Icon>
 
-<p>{this.props.heart}</p>
+        <p>{this.props.heart}</p>
       </div>
     );
   }
