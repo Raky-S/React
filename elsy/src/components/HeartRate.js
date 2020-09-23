@@ -7,11 +7,10 @@ class HeartRate extends Component {
     return (
       <div className="box col-md-2 col-6">
         <Icon name="favorite" color={"red"}></Icon>
-        <Slider />
-        <p>BPM:{this.props.heart}</p>
+        <Slider min max onChange />
+        <p>{this.props.heart}BPM</p>
       </div>
     );
   }
 }
 export default HeartRate;
-
