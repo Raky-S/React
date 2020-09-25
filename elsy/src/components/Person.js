@@ -7,8 +7,8 @@ class Person extends Component {
     return (
       <div className="box col-md-2 col-6">
         <Icon name="directions_walk" color={"black"}></Icon>
+        <Slider min =  {this.props.min} max = {this.props.max} onChange = {this.props.onChange} value = {this.props.steps} />
         <p>{this.props.steps}</p>
-        <Slider />
       </div>
     );
   }
