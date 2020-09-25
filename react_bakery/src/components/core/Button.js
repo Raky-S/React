@@ -5,7 +5,9 @@ class Button extends Component {
     
     render () {
         return (
-            <button className= "btn btn-primary" onMouseOver="btn btn-secondary" children isSelected onClick >dsfbb</button>
+            <div>
+                <button className= "btn btn-primary" onMouseOver="btn btn-secondary" children isSelected onClick ></button>
+            </div>
         )
     }
 }

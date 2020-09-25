@@ -26,9 +26,9 @@ class App extends Component {
        <Pay/>
        <List/>
        <Add/>
-       <Button>Add</Button>
-       <Button>List</Button>
-       <Button>Pay</Button>
+       <Button children="Add" isSelected onClick>Add</Button>
+       <Button children isSelected onClick>List</Button>
+       <Button children isSelected onClick>Pay</Button>
       </div>
     );
   }
