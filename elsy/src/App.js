@@ -69,7 +69,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="App row">
         <Water water= {this.state.water}
         />
         <Person min = {MIN_STEPS} max = {MAX_STEPS} onChange = {this.onStepChange} steps = {this.state.steps}/>

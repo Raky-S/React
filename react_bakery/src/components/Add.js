@@ -15,6 +15,7 @@ class Add extends Component {
     return (
       <div >
        <p>Add</p>
+{this.props.children}
       </div>
     );
   }
