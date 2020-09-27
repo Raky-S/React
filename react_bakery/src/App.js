@@ -8,54 +8,40 @@ import Button from "./components/core/Button";
 
 
 
-class App extends Component {
+/* CODE TROUVE SUR STACKOVERFLOW de LYDY donc pas le mien*/
 
+
+class App extends Component {
   constructor() {
     super();
-    this.sayHello = this.sayHello.bind(this);
+    this.state = {
+      activeTab: "add",
+      items: [],
+    };
   }
 
-
-
-  state = {
-    activeTab: Add,
-    items: [],
-  };
-
-
-
- sayHello() {
-    
-      
-      let hey ='hey hey'
-      alert(hey)
-      return hey;
-    
+  handleClick(activeTab) {
+    this.setState({ activeTab });
   }
 
   render() {
     return (
-      <div className="App">
+      <div>
         <div className="App-header">
           <h1>Bakery</h1>
         </div>
-        <Add />
-        <List />
-        <Pay />
 
-<button onClick ={this.sayHello}>click ici </button>
-        {/* <Button children="Add" isSelected onClick ={this.sayHello} > */}
-          {/* {this.state.activeTab} */}
-        {/* </Button> */}
-        {/* <Button children="List" isSelected onClick>
-          
-        </Button>
-        <Button children="Pay" isSelected onClick>
-           
-        </Button> */}
+        <div className="App btn-group bouton">
+          <Button onClick={this.handleClick.bind(this, "add")}> Add </Button>
+          <Button onClick={this.handleClick.bind(this, "list")}> List </Button>
+          <Button onClick={this.handleClick.bind(this, "pay")}> Pay </Button>
+        </div>
+
+        {this.state.activeTab === "add" && <Add />}
+        {this.state.activeTab === "list" && <List />}
+        {this.state.activeTab === "pay" && <Pay />}
       </div>
     );
   }
 }
-
 export default App;

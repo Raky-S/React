@@ -14,7 +14,7 @@ class List extends Component {
   render() {
     return (
       <div >
-       <p>List</p>
+       <h1>Pain with chocolate</h1>
       </div>
     );
   }

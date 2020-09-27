@@ -13,7 +13,7 @@ class Pay extends Component {
   render() {
     return (
       <div >
-       <p>Pay</p>
+       <h1>Pay Me now!</h1>
       </div>
     );
   }
