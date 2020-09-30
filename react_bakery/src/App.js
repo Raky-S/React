@@ -12,6 +12,7 @@ class App extends Component {
     this.onClickTabAdd = this.onClickTabAdd.bind(this);
     this.onClickTabList = this.onClickTabList.bind(this);
     this.onClickTabPay = this.onClickTabPay.bind(this);
+    this.addItem = this.addItem.bind(this);
     this.state = {
       activeTab: "add",
       items: [],
@@ -33,16 +34,22 @@ class App extends Component {
   }
 
   onClickTabPay() {
-    console.log("tab pay click");
     this.setState({
       activeTab: "pay",
     });
   }
 
+  addItem (price, value) {
+this.setState({
+  items: price + value ,
+})
+  }
+
+
   renderContent() {
     switch (this.state.activeTab) {
       case "add":
-        return <Add></Add>;
+        return <Add callBack={this.addItem} ></Add>;
       case "list":
         return <List></List>;
       case "pay":
@@ -54,9 +61,9 @@ class App extends Component {
 
   render() {
     return (
-      <div className="row justify-content-center">
+      <div className="justify-content-center">
         <div className="App-header">La Bakery</div>
-        <div>
+        <div className="row justify-content-center mt-8 ">
           <Button
             isSelected={this.state.activeTab === "add"}
             onClick={this.onClickTabAdd}
