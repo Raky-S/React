@@ -37,15 +37,18 @@ class Add extends Component {
   submitForm() {
     
     let newForm = this.state.input + " " + this.state.price + "€";
-    // {this.props.callBack }
-    console.log(newForm);
-    // console.log(this.props.callBack);
+    
+    // let futureList= this.props.callBack ;
+    // console.log(futureList);
+     console.log(newForm);
+      // callback(this.newForm);
+      // callback();
   }
 
   render() {
     return (
       <div className="App">
-        <form onClick={()=>this.submitForm(this.props.callBack)}>
+        <form onClick={()=>this.submitForm()}>
           <label>
             <input
               type="text"
@@ -61,10 +64,9 @@ class Add extends Component {
           min={PriceMin}
           max={PriceMax}
           onChange={this.updatePrice}
-          price={this.props.price}
         >
-          {this.state.price}€{" "}
         </RCSlider>
+          {this.state.price}€
       </div>
     );
   }

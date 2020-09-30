@@ -39,9 +39,9 @@ class App extends Component {
     });
   }
 
-  addItem (price, value) {
+  addItem (price, input) {
 this.setState({
-  items: price + value ,
+
 })
   }
 
@@ -49,7 +49,7 @@ this.setState({
   renderContent() {
     switch (this.state.activeTab) {
       case "add":
-        return <Add callBack={this.addItem} ></Add>;
+        return <Add> callBack={this.addItem} </Add>;
       case "list":
         return <List></List>;
       case "pay":
