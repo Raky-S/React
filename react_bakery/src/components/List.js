@@ -8,7 +8,7 @@ class List extends Component {
     //     price: this.props.price,
     //   },
     // };
-    this.methodForm = this.methodForm.bind(this);
+    // this.addItem = this.addItem.bind(this);
   }
   methodForm() {
     // console.log(this);
@@ -27,10 +27,10 @@ class List extends Component {
           <p>La list</p>
         <ul className="list-group">
           <li className="list-group-item d-flex justify-content-between align-items-center">
-            {this.props.addItem.input}
+            {this.props.addItem.items.input}"ce que tu veux"
             <span className="badge badge-primary badge-pill">
               {" "}
-              {this.props.addItem.items}
+              {this.props.addItem.items}"€"
             </span>
             //{" "}
           </li>
