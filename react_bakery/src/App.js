@@ -39,19 +39,26 @@ class App extends Component {
     });
   }
 
-  addItem (price, input) {
+  addItem(input, price) {
+    
+let newItems = this.state.items;
+newItems.push({input, price})
+
 this.setState({
 
-})
+  items: newItems
+ 
+     })
+  
+    console.log(this.state.items);
   }
-
 
   renderContent() {
     switch (this.state.activeTab) {
       case "add":
-        return <Add> callBack={this.addItem} </Add>;
+        return <Add addItem={this.addItem}> </Add>;
       case "list":
-        return <List></List>;
+        return <List addItem={this.addItem}></List>;
       case "pay":
         return <Pay></Pay>;
       default:

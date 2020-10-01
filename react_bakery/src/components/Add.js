@@ -1,8 +1,6 @@
 import React, { Component } from "react";
-import Button from "./core/Button";
 import RCSlider from "rc-slider";
 import "rc-slider/assets/index.css";
-import List from "./List";
 
 const PriceMax = 10;
 const PriceMin = 1;
@@ -24,31 +22,26 @@ class Add extends Component {
     this.setState({
       input: event.target.value,
     });
-    console.log(event.target.value);
+    // console.log(event.target.value);
   }
 
   updatePrice(val) {
     this.setState({
       price: val,
     });
-    console.log(val);
+    // console.log(val);
   }
 
   submitForm() {
-    
     let newForm = this.state.input + " " + this.state.price + "€";
-    
-    // let futureList= this.props.callBack ;
-    // console.log(futureList);
-     console.log(newForm);
-      // callback(this.newForm);
-      // callback();
+    console.log(newForm);
+    this.props.addItem(this.state.input, this.state.price);
   }
 
   render() {
     return (
       <div className="App">
-        <form onClick={()=>this.submitForm()}>
+        <div>
           <label>
             <input
               type="text"
@@ -57,16 +50,17 @@ class Add extends Component {
               onChange={this.updateInput}
             />
           </label>
-          <input type="submit" className="btn btn-primary" value="Add" />
-        </form>
+          <input
+            type="submit"
+            className="btn btn-primary"
+            value="Add"
+            onClick={() => this.submitForm()}
+          />
+        </div>
 
-        <RCSlider
-          min={PriceMin}
-          max={PriceMax}
-          onChange={this.updatePrice}
-        >
-        </RCSlider>
+        <RCSlider min={PriceMin} max={PriceMax} onChange={this.updatePrice}>
           {this.state.price}€
+        </RCSlider>
       </div>
     );
   }
