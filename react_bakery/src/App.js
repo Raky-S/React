@@ -40,23 +40,25 @@ class App extends Component {
   }
 
   addItem(input, price) {
-    
-let newItems = this.state.items;
-newItems.push({input, price})
+    let newItems = this.state.items;
+    newItems.push({ input, price });
 
-this.setState({
+    this.setState({
+      items: newItems,
+    });
 
-  items: newItems
- 
-     })
-  
     console.log(this.state.items);
   }
+
+  // listItems(input, price) {
+  //   this.setState({});
+  //   console.log(input, price);
+  // }
 
   renderContent() {
     switch (this.state.activeTab) {
       case "add":
-        return <Add addItem={this.addItem}> </Add>;
+        return <Add addItem={this.addItem}></Add>;
       case "list":
         return <List addItem={this.addItem}></List>;
       case "pay":
