@@ -8,33 +8,30 @@ class List extends Component {
     //     price: this.props.price,
     //   },
     // };
-    // this.addItem = this.addItem.bind(this);
+    this.listForm = this.listForm.bind(this);
   }
-  methodForm() {
-    // console.log(this);
-    // this.props.listItems.input;
-    // let arr = this.props.items;
-    // let arr2 = arr.map(this.props.items).length;
-    // arr2 = arr.map(function () {
 
-    // });
-    // console.log(arr);
-    // console.log(arr2);
+  listForm() {
+    const listItems = this.props.listItem.map(({input, price}) => {
+      return (
+        <li className="list-group-item d-flex justify-content-between align-items-center">
+          {input}
+          <span className="badge badge-primary badge-pill">{price}€</span>
+        </li>
+      );
+    });
+
+    return (
+      <ul className="list-group">
+        {listItems}
+      </ul>
+    );
   }
+  
   render() {
     return (
       <div className="App">
-          <p>La list</p>
-        <ul className="list-group">
-          <li className="list-group-item d-flex justify-content-between align-items-center">
-            {this.props.addItem.items.input}"ce que tu veux"
-            <span className="badge badge-primary badge-pill">
-              {" "}
-              {this.props.addItem.items}"€"
-            </span>
-            //{" "}
-          </li>
-        </ul>
+        {this.listForm()}
       </div>
     );
   }
