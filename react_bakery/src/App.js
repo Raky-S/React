@@ -50,8 +50,6 @@ class App extends Component {
     console.log(this.state.items);
   }
 
-  
-
   renderContent() {
     switch (this.state.activeTab) {
       case "add":
@@ -69,25 +67,28 @@ class App extends Component {
     return (
       <div className="justify-content-center">
         <div className="App-header">La Bakery</div>
-        <div className="row justify-content-center mt-8 ">
-          <Button
-            isSelected={this.state.activeTab === "add"}
-            onClick={this.onClickTabAdd}
-          >
-            Add
-          </Button>
-          <Button
-            isSelected={this.state.activeTab === "list"}
-            onClick={this.onClickTabList}
-          >
-            List
-          </Button>
-          <Button
-            isSelected={this.state.activeTab === "pay"}
-            onClick={this.onClickTabPay}
-          >
-            Pay
-          </Button>
+        <div className="row justify-content-center lesbtn ">
+          
+            <Button
+              classeName="row"
+              isSelected={this.state.activeTab === "add"}
+              onClick={this.onClickTabAdd}
+            >
+              Add
+            </Button>
+            <Button
+              isSelected={this.state.activeTab === "list"}
+              onClick={this.onClickTabList}
+            >
+              List
+            </Button>
+            <Button
+              isSelected={this.state.activeTab === "pay"}
+              onClick={this.onClickTabPay}
+            >
+              Pay
+            </Button>
+          
 
           {this.renderContent()}
           {/* {this.state.activeTab === 'add' ? <Add></Add>: (this.state.activeTab === 'list' ? <List></List> : <Pay></Pay>)} */}

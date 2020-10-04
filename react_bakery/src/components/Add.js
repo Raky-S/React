@@ -52,7 +52,7 @@ class Add extends Component {
           </label>
           <input
             type="submit"
-            className="btn btn-primary"
+            className="btn btn-info"
             value="Add"
             onClick={() => this.submitForm()}
           />

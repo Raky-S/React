@@ -14,9 +14,9 @@ class List extends Component {
   listForm() {
     const listItems = this.props.listItem.map(({input, price}) => {
       return (
-        <li className="list-group-item d-flex justify-content-between align-items-center">
+        <li className="row list-group-item d-flex justify-content-between align-items-center">
           {input}
-          <span className="badge badge-primary badge-pill">{price}€</span>
+          <span className="badge badge-info badge-pill ">{price}€</span>
         </li>
       );
     });
