@@ -42,7 +42,7 @@ class App extends Component {
         <div className="App">
           <p>Name : {this.state.name}</p>
           <p>Capital : {this.state.capital}</p>
-          <p>Flag : {this.state.flag}</p>
+          <img src= {this.state.flag} alt='flag'/>
           <p>Population : {this.state.population}</p>
           <p>Region : {this.state.region}</p>
           <div  className="row justify-content-center">
