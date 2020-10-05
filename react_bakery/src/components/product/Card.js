@@ -8,16 +8,15 @@ class Card extends Component {
         this.state = {
             source: specimen,
         }
-        console.log(this.state);
     }
 
     componentDidMount() {
-        fetch(`http://konexio.codiscovery.co/bakery/api/?q=${this.props.itemName}`)
-            .then(response => response.json())
-            .then(res => {
-                if (res.success) {
+        fetch(`http://konexio.codiscovery.co/bakery/api/?q=${this.props.input}`)
+            .then(res => res.json())
+            .then(json => {
+                if (json.success) {
                     this.setState({
-                        source: res.source
+                        source: json.source
                     })
                 }
             });
@@ -32,7 +31,7 @@ class Card extends Component {
 
     render() {
         return <div>
-            <button>
+            <button onClick={() => this.props.onClickFn(this.props.input, this.props.price)}>
                 <img src={this.state.source} alt="" />
             </button>
         </div>;
