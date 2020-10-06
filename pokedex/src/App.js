@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Button from './components/Button'
+import Pokeindex from './components/Pokeindex';
 
 
 class App extends Component {
@@ -13,6 +13,7 @@ class App extends Component {
       height: 0,
       weight: 0,
       type: "",
+      id: 0,
     }
   }
 
@@ -26,10 +27,19 @@ class App extends Component {
           height: value.height,
           weight: value.weight,
           type: value.types[0].type.name,
+          id: value.id,
         })
         // console.log(value);
       })
    
+  }
+
+
+  idOnClick() {
+    fetch(`https://pokeres.bastionbot.org/images/pokemon/${this.setState.id}.png`)
+      .then(res => res.json())
+      .then(json => )
+  
   }
 
 
@@ -43,8 +53,8 @@ class App extends Component {
             Pokedex
           </h1>
         </header>
-        
-          <Button componentDidMount={this.componentDidMount}/>
+        <Pokeindex />
+        <Button componentDidMount={this.componentDidMount}></Button>
       </div>
     );
   }
