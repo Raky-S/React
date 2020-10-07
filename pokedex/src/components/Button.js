@@ -14,7 +14,7 @@ class Button extends Component {
   render() {
     return (
        <button onClick={this.props.componentDidMount}>
-  <img src="https://pokeres.bastionbot.org/images/pokemon/25.png" name="pikachu" className="img-thumb" alt=""/>
+  {/* <img src="https://pokeres.bastionbot.org/images/pokemon/25.png" name="pikachu" className="img-thumb" alt=""/> */}
   {this.props.children} 
   
 </button>
