@@ -19,7 +19,7 @@ class PopularBattle extends Component {
       .then((res) => res.json())
       .then((json) => {
         this.setState({
-          movies: json.results,
+          movies: json.results[1],
         });
         // console.log("ComponentDidMount ", json.results[1]);
       });
@@ -30,10 +30,13 @@ class PopularBattle extends Component {
     let current = this.state.movies
     let i = 0;
     console.log(current);
+    console.log(this.current)
     return (
-      console.log(this.state.movies)
+      <div> 
+
+        <Card data={this.state.movies} />
+      </div>
       // <div className="row">
-      //   <Card data={this.state.current[i]} />
       //   <Card data={this.state.current[i]} />
       // </div>
     );

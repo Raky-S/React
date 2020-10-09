@@ -6,7 +6,7 @@ import Popular from './components/Popular'
 import PopularBattle from './components/PopularBattle'
 import MyList from './components/MyList'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import './App.css';
+import './App.css'; 
 
 
 class App extends Component {

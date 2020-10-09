@@ -3,7 +3,7 @@ import React, {Component} from "react";
 class Card extends Component {
  
   render() {
-    console.log("dans card", this.props);
+    // console.log("dans card", this.props);
     return (
       <div className="card col-3" style={{ width: 250 }}>
         <img
