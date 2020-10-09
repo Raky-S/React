@@ -16,7 +16,7 @@ class App extends Component {
         <Router>
           <div>
             <nav >
-              <div className="App-header"><h1>MOOVICE</h1></div>
+              <div className="App-header rounded-pill bg-gradient-warning"><h1 >MOOVICE</h1></div>
               <ul className="mt-6 btn-group">
                 <li><button className="btn btn-warning"><Link to="/">This week</Link></button></li>
                 <li><button className="btn btn-warning"><Link to="/battle/">This week battle</Link></button></li>
