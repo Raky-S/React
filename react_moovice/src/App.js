@@ -14,7 +14,7 @@ class App extends Component {
     return (
       <div>
         <Router>
-          <div>
+          <div className="container">
             <nav >
               <div className="App-header rounded-pill bg-gradient-warning"><h1 >MOOVICE</h1></div>
               <ul className="mt-6 btn-group">
