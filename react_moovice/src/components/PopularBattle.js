@@ -80,7 +80,7 @@ class PopularBattle extends Component {
         <div className="col-6">
           <Card onClick={() => this.choseFilm(secondeMovie.id)} {...secondeMovie} />
         </div>
-        <MyList listFromChoseFilm={this.choseFilm()}/>
+        <MyList choseFilm={() => this.choseFilm()} />
       </div>
     );
   }

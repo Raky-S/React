@@ -6,31 +6,35 @@ class MyList extends Component {
     this.getFromLocalStorage = this.getFromLocalStorage.bind(this)
     this.state = {
       localStorage: [],
+      movies: [],
+      // movieIds: this.getFromLocalStorage()
     }
+    console.log('hey hey hey', localStorage);
   }
 
 
-  getFromLocalStorage(mylist) {
-   
-    console.log('dans getfromLS',this.props);
+  getFromLocalStorage(myList) {
 
-    let newMylist = this.props.choseFilm;
+    console.log('dans getfromLS', this.props);
+    let newMyList = this.props.choseFilm;
+
     console.log();
-    newMylist.push(mylist);
-    console.log(mylist);
+    newMyList.push(myList);
+    console.log(newMyList);
 
     this.setState({
-      localStorage: newMylist,
+      localStorage: newMyList,
     });
 
-    console.log(this.state.localStorage);
+    console.log('hello linda', localStorage);
   }
-  
 
-  render(){
-    return(
+
+  render() {
+    return (
       <div>
-        <p>dis quelque chose!!</p>
+        <p>dis quelque chose!!
+        {this.state.localStorage}</p>
       </div>
     )
   }
