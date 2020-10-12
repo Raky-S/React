@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Card from "./movie/Card";
 import { API_KEY } from "../service/Network";
-import { element } from "prop-types";
+// import { element } from "prop-types";
 import placeholder from "../image/placeholder.png";
 
 class Popular extends Component {

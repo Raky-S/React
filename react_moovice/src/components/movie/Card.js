@@ -1,14 +1,14 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 
 class Card extends Component {
- 
+
   render() {
     // console.log("dans card", this.props);
-const {
-  title,
-  imgUrl,
-  description,
-}= this.props
+    const {
+      title,
+      imgUrl,
+      description,
+    } = this.props
     return (
       <div className="card" style={{ width: 250 }} onClick={this.props.onClick}>
         <img

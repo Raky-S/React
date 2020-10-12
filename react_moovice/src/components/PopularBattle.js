@@ -1,17 +1,17 @@
 import React, { Component } from "react";
 import Card from "./movie/Card";
 import { API_KEY } from "../service/Network";
-import { element } from "prop-types";
 import placeholder from "../image/placeholder.png";
+import MyList from "./MyList";
 
 class PopularBattle extends Component {
   constructor() {
     super();
-    this.choseFilm=this.choseFilm.bind(this)
+    this.choseFilm = this.choseFilm.bind(this)
     this.state = {
       movies: [],
       currentPage: 1,
-      localStorage:"",
+      storage: [],
     };
   }
 
@@ -37,19 +37,32 @@ class PopularBattle extends Component {
 
 
 
-choseFilm(id){
-console.log("j'ai été cliqué");
-
-let storage=localStorage.getItem('my-list') 
-// && this.state({ currentPage: JSON.parse(localStorage.getItem('my-list'))})
-// local = JSON.parse(storage)
-console.log(storage); 
+  choseFilm(id) {
 
 
-this.setState({
-  currentPage: this.state.currentPage +1,
-});
-}
+   
+
+    let storage = JSON.parse(localStorage.getItem('my-list')) || []
+    if (storage.includes(id))
+    storage.push(id)
+    
+    localStorage.setItem('my-list', JSON.stringify(storage));
+
+
+    this.setState({
+      currentPage: this.state.currentPage + 1,
+    });
+
+
+    
+    // console.log("j'ai été cliqué", id);
+    // let listStore = [];
+    // localStorage.setItem('my-list', JSON.stringify(listStore.push(id)));
+    // let storage = localStorage.getItem('my-list')
+    // // storage = JSON.parse(storage)
+    // console.log(storage);
+
+  }
 
 
   render() {
@@ -58,21 +71,21 @@ this.setState({
       currentPage,
     } = this.state
 
-    const secondeIndex= currentPage * 2 -1
-    const firstIndex= secondeIndex - 1
+    const secondeIndex = currentPage * 2 - 1
+    const firstIndex = secondeIndex - 1
 
     const firstMovie = movies[firstIndex];
     const secondeMovie = movies[secondeIndex];
-    console.log(firstMovie);
-    console.log(secondeMovie);
+    // console.log(firstMovie);
+    // console.log(secondeMovie);
 
     return (
       <div className="row">
         <div className="col-6">
-          <Card onClick={() =>this.choseFilm(firstMovie.id)} {...firstMovie} />
+          <Card onClick={() => this.choseFilm(firstMovie.id)} {...firstMovie} />
         </div>
         <div className="col-6">
-          <Card onClick={() =>this.choseFilm(secondeMovie.id)} {...secondeMovie} />
+          <Card onClick={() => this.choseFilm(secondeMovie.id)} {...secondeMovie} />
         </div>
       </div>
     );
