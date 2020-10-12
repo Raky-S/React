@@ -11,7 +11,6 @@ class PopularBattle extends Component {
     this.state = {
       movies: [],
       currentPage: 1,
-      storage: [],
     };
   }
 
@@ -39,22 +38,17 @@ class PopularBattle extends Component {
 
   choseFilm(id) {
 
-
-   
-
-    let storage = JSON.parse(localStorage.getItem('my-list')) || []
-    if (storage.includes(id))
-    storage.push(id)
-    
-    localStorage.setItem('my-list', JSON.stringify(storage));
-
+    let myList = JSON.parse(localStorage.getItem('my-list')) || []
+    if (!myList.includes(id)) {
+      myList.push(id)
+      localStorage.setItem('my-list', JSON.stringify(myList))
+    }
 
     this.setState({
       currentPage: this.state.currentPage + 1,
     });
 
 
-    
     // console.log("j'ai été cliqué", id);
     // let listStore = [];
     // localStorage.setItem('my-list', JSON.stringify(listStore.push(id)));
@@ -66,7 +60,6 @@ class PopularBattle extends Component {
 
 
   render() {
-
     const { movies,
       currentPage,
     } = this.state
@@ -87,6 +80,7 @@ class PopularBattle extends Component {
         <div className="col-6">
           <Card onClick={() => this.choseFilm(secondeMovie.id)} {...secondeMovie} />
         </div>
+        <MyList listFromChoseFilm={this.choseFilm()}/>
       </div>
     );
   }
