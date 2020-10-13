@@ -35,7 +35,6 @@ class PopularBattle extends Component {
   }
 
 
-
   choseFilm(id) {
 
     let myList = JSON.parse(localStorage.getItem('my-list')) || []
@@ -44,6 +43,7 @@ class PopularBattle extends Component {
       localStorage.setItem('my-list', JSON.stringify(myList))
     }
 
+    
     this.setState({
       currentPage: this.state.currentPage + 1,
     });
