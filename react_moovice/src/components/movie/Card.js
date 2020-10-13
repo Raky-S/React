@@ -8,6 +8,7 @@ class Card extends Component {
       title,
       imgUrl,
       description,
+
     } = this.props
     return (
       <div className="card" style={{ width: 250 }} onClick={this.props.onClick}>

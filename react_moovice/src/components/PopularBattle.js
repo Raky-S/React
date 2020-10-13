@@ -27,7 +27,6 @@ class PopularBattle extends Component {
               ? ` https://image.tmdb.org/t/p/w300${elem.poster_path}`
               : placeholder,
             description: elem.overview,
-            id: elem.id,
           };
         });
         this.setState({ movies });
@@ -80,7 +79,7 @@ class PopularBattle extends Component {
         <div className="col-6">
           <Card onClick={() => this.choseFilm(secondeMovie.id)} {...secondeMovie} />
         </div>
-        <MyList choseFilm={() => this.choseFilm()} />
+        {/* <MyList choseFilm={() => this.choseFilm()} /> */}
       </div>
     );
   }
