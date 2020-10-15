@@ -9,7 +9,7 @@
 }
 
 .App-header {
-  background-image: url('./image/cinema_baniere.jpg');
+  background-image: url("./image/cinema_baniere.jpg");
   padding: 13%;
   min-height: 30vh;
   flex-direction: row;
@@ -23,17 +23,16 @@
   color: #61dafb;
 }
 
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url("https://fonts.googleapis.com/css?family=Nunito");
 
 body {
   font-family: Nunito;
 }
 
+
 .button {
   color: white;
-
 }
 .card {
   padding: 10px;
- 
 }
