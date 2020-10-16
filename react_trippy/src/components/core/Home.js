@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
-import Home from '../components/core/Home';
 // import Global from '../Global';
 // import Config from '../Config';
 
-class HomeContainers extends Component {
+
+class Home extends Component {
  
   render() {
     return (
         <div>
-         <Home/>
+         <p>Hello Home</p>
         </div>
     );
   }
 }
 
-export default HomeContainers;
+export default Home;
