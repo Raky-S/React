@@ -1,15 +1,14 @@
-export default App;
 import React, { Component } from 'react';
 import './App.css';
-import './css/bootstrap.min.css'
-import Button from './component/Button';
-import './css/pokecss.css'
-import Card from './component/Card';
+import Button from './components/Button';
+import Pokeindex from './components/Pokeindex'
+import '../src/css/bootstrap.min.css'
+
 class App extends Component {
   constructor() {
     super();
     this.pokeClick = this.pokeClick.bind(this);
-    this.subPokemon = this.subPokemon.bind(this);
+    // this.subPokemon = this.subPokemon.bind(this);
     this.state = {
       name: '',
       height: 0,
@@ -22,6 +21,7 @@ class App extends Component {
 
   componentDidMount() {
     this.pokemon('1')
+    this.pokeClick('1')
   }
 
 
@@ -34,10 +34,11 @@ class App extends Component {
           height: json.height,
           weight: json.weight,
           type: json.types[0].type.name,
-          id: json.id
+          id: json.id,
+         
         })
         // console.log('heyyy',json.id);
-        // console.log('coucou',json.types[0].type.name)       
+        console.log('coucou',json.types[0].type.name)       
       });
   }
   pokeClick() {
@@ -45,122 +46,51 @@ class App extends Component {
       .then(res => res.json())
       .then(json => {
         this.setState({
-          // id: json.results[0].url['id'],
           pokeList: json.results
         })
-        console.log(json.results);
+                console.log('jason nest pas la', json.results);
       });
   }
-  subPokemon() {
-    console.log('subPokemon', this.state)
-    return this.state.pokeList.map((id) => {
-      return <img onClick={this.subPokemon} src={`https://pokeres.bastionbot.org/images/pokemon/${id}.png`} />
-    })
-  }
+  // subPokemon() {
+  //   console.log('subPokemon', this.state)
+  //   return this.state.pokeList.map((id) => {
+  //     return <img onClick={this.subPokemon} src={`https://pokeres.bastionbot.org/images/pokemon/${id}.png`} />
+  //   })
+  // }
   render() {
+    console.log('pokelist dans app', this.state.pokeList);
     return (
       <div className="App">
-        <div>
-          <h1>pokedex</h1>
-          <img className='poke' src={`https://pokeres.bastionbot.org/images/pokemon/${this.state.id}.png`}></img>
-          <Card
-            Name={this.state.name}
-            Height={this.state.height} m
-            Weight={this.state.weight} Kg
-            Type={this.state.type}>
-            {this.state}</Card>
-        </div>
-        <div>
-          <p>{this.subPokemon()} la liste de pokemon </p>
-          <Button onClick={this.pokeClick} >
-            <img className='poke' src={`https://pokeres.bastionbot.org/images/pokemon/${this.state.id}.png`} ></img>
-            {this.state.id}
-          </Button>
-        </div>
+        {this.state.pokeList.map((elem) => {
+          return (
+            <div>
+              <p> la liste de pokemon </p>
+
+              <div className="card" style={{ width: 180 }}>
+                <img className="card-img-top" src={`https://pokeres.bastionbot.org/images/pokemon/${this.state.id}.png`} />
+                <div className="card-body">
+                  <p className="card-text" >
+                    <Pokeindex
+                      Name={elem.name}
+                      Height={this.state.height} m
+                      Weight={this.state.weight} Kg
+                      Type={this.state.type}>
+                      </Pokeindex>
+                  </p>
+                </div>
+              </div>
+              {/* <Button onClick={this.pokeClick} >
+                  <img className='poke' src={`https://pokeres.bastionbot.org/images/pokemon/${this.state.id}.png`} ></img>
+                </Button> */}
+            </div>
+          )
+        })}
       </div>
     );
   }
 }
 export default App;
 
-
-/*
-import React, { Component } from "react";
-import "./App.css";
-import Button from "./components/Button";
-import Pokeindex from "./components/Pokeindex";
-
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      name: "",
-      height: 0,
-      weight: 0,
-      type: "",
-      id: 0,
-      list: [],
-    };
-  }
-
-  componentDidMount() {
-    fetch("https://pokeapi.co/api/v2/pokemon/rattata")
-      .then((res) => res.json())
-      .then((value) => {
-        this.setState({
-          name: value.name,
-          height: value.height,
-          weight: value.weight,
-          type: value.types[0].type.name,
-          id: value.id,
-
-        });
-        // console.log(value);
-      });
-  }
-
-  catchIdOnClick() {
-    fetch(` https://pokeapi.co/api/v2/pokemon?limit=100`)
-      .then((res) => res.json())
-      .then((value) =>
-        this.setState({
-          id: value.results[0].url.id,
-          // list: value.results,
-          // console.log(value)
-        })
-      );
-  }
-
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <h1>Pokedex</h1>
-        </header>
-        <Pokeindex onClick={this.componentDidMount}
-          name={this.state.name}
-          height={this.state.height}
-          weight={this.state.weight}
-          type={this.state.type} />
-        <Button componentDidMount={this.componentDidMount}>
-          <img
-            className="poke"
-            className="img-thumb"
-            src={`https://pokeres.bastionbot.org/images/pokemon/${this.state.id}.png`}
-          ></img>
-        </Button>
-        <Button componentDidMount={this.componentDidMount}>
-          <img
-            className="poke"
-            className="img-thumb"
-            src={`https://pokeres.bastionbot.org/images/pokemon/${this.state.id}.png`}
-          ></img>
-        </Button>
-      </div>
-    );
-  }
-}
-*/
 
 
 
